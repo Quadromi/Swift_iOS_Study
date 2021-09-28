@@ -1,15 +1,8 @@
-//
-//  CountryTableViewController.swift
-//  Country List
-//
-//  Created by 황정현 on 2021/09/19.
-//
-
 import UIKit
 
 class CountryTableViewController: UITableViewController {
 
-    let flags = ["🇰🇷", "🇬🇧", "🇩🇰", "🇬🇷", "🇫🇷"]; //Emoji: Control + Command + Spacebar
+    let flags = getCountries(); //Emoji: Control + Command + Spacebar
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +19,22 @@ class CountryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath)
 
-        cell.textLabel?.text = flags[indexPath.row];
+        cell.textLabel?.text = flags[indexPath.row].flag + "-" + flags[indexPath.row].year;
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCountry = flags[indexPath.row];
+        
+        performSegue(withIdentifier: "DefinitionSegue", sender: selectedCountry)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let defOfViewController = segue.destination as? CountryDefinitionViewController {
+            if let selectedCountry = sender as? Country {
+                defOfViewController.country = selectedCountry;
+            }
+        }
     }
 }

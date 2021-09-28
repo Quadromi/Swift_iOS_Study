@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lcn-MF-xpM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pWi-OX-NWc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Country Table View Controller-->
+        <!--Country List-->
         <scene sceneID="Igv-VB-He6">
             <objects>
                 <tableViewController id="lcn-MF-xpM" customClass="CountryTableViewController" customModule="Country_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,10 +31,74 @@
                             <outlet property="delegate" destination="lcn-MF-xpM" id="Fbp-vO-cwn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Country List" id="drh-ok-aX5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="6ms-0U-f3o"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="G4y-YE-PEy" kind="show" identifier="DefinitionSegue" id="iTO-AQ-CvX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldv-NI-74V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="78"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="77.678571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yKn-Go-HlF">
+            <objects>
+                <navigationController id="pWi-OX-NWc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Bv-Fc-4Sd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lcn-MF-xpM" kind="relationship" relationship="rootViewController" id="P2N-ct-LQa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u36-rR-Pjv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="78"/>
+        </scene>
+        <!--Country Definition View Controller-->
+        <scene sceneID="OXk-dH-5g1">
+            <objects>
+                <viewController id="G4y-YE-PEy" customClass="CountryDefinitionViewController" customModule="Country_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMx-wJ-Oqk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇧🇷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZh-kk-P1P">
+                                <rect key="frame" x="98" y="128" width="218" height="239"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHy-qy-u8z">
+                                <rect key="frame" x="15" y="364" width="384" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OKw-ip-yKB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mZh-kk-P1P" firstAttribute="centerX" secondItem="zMx-wJ-Oqk" secondAttribute="centerX" id="Fwr-F5-aUf"/>
+                            <constraint firstItem="OKw-ip-yKB" firstAttribute="trailing" secondItem="nHy-qy-u8z" secondAttribute="trailing" constant="15" id="PGz-23-blq"/>
+                            <constraint firstItem="nHy-qy-u8z" firstAttribute="top" secondItem="mZh-kk-P1P" secondAttribute="bottom" constant="-3" id="R8S-FV-zTS"/>
+                            <constraint firstItem="nHy-qy-u8z" firstAttribute="leading" secondItem="OKw-ip-yKB" secondAttribute="leading" constant="15" id="bzT-fs-o6Q"/>
+                            <constraint firstItem="mZh-kk-P1P" firstAttribute="top" secondItem="OKw-ip-yKB" secondAttribute="top" constant="40" id="gAf-qa-77C"/>
+                            <constraint firstItem="nHy-qy-u8z" firstAttribute="centerX" secondItem="zMx-wJ-Oqk" secondAttribute="centerX" id="tq9-h2-nVb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5cg-bi-qhq"/>
+                    <connections>
+                        <outlet property="bigFlagLabel" destination="mZh-kk-P1P" id="0ma-9N-fTG"/>
+                        <outlet property="countryDefinitionLabel" destination="nHy-qy-u8z" id="FHW-qi-dVc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAf-TW-ras" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708.6956521739135" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,8 @@
 		23F2D6AE26F721A10058AD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F2D6AD26F721A10058AD2E /* Assets.xcassets */; };
 		23F2D6B126F721A10058AD2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F2D6AF26F721A10058AD2E /* LaunchScreen.storyboard */; };
 		23F2D6B926F7236C0058AD2E /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F2D6B826F7236C0058AD2E /* CountryTableViewController.swift */; };
+		3A2A27242701D0120038D428 /* CountryDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A27232701D0120038D428 /* CountryDefinitionViewController.swift */; };
+		3AEE92BB2702A34700F25135 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEE92BA2702A34700F25135 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		23F2D6B026F721A10058AD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23F2D6B226F721A10058AD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23F2D6B826F7236C0058AD2E /* CountryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
+		3A2A27232701D0120038D428 /* CountryDefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDefinitionViewController.swift; sourceTree = "<group>"; };
+		3AEE92BA2702A34700F25135 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				23F2D6A426F7219E0058AD2E /* AppDelegate.swift */,
 				23F2D6A626F7219E0058AD2E /* SceneDelegate.swift */,
 				23F2D6AA26F7219E0058AD2E /* Main.storyboard */,
+				3AEE92BA2702A34700F25135 /* Country.swift */,
 				23F2D6AD26F721A10058AD2E /* Assets.xcassets */,
 				23F2D6AF26F721A10058AD2E /* LaunchScreen.storyboard */,
 				23F2D6B226F721A10058AD2E /* Info.plist */,
 				23F2D6B826F7236C0058AD2E /* CountryTableViewController.swift */,
+				3A2A27232701D0120038D428 /* CountryDefinitionViewController.swift */,
 			);
 			path = "Country List";
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2A27242701D0120038D428 /* CountryDefinitionViewController.swift in Sources */,
 				23F2D6A526F7219E0058AD2E /* AppDelegate.swift in Sources */,
 				23F2D6A726F7219E0058AD2E /* SceneDelegate.swift in Sources */,
+				3AEE92BB2702A34700F25135 /* Country.swift in Sources */,
 				23F2D6B926F7236C0058AD2E /* CountryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
